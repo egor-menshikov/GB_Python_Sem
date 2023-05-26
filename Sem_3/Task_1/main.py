@@ -3,10 +3,7 @@
 # Output: 6
 
 from random import randint
-list_1 = []
-for i in range(20):
-    list_1.append(randint(0, 10))
-q = set(list_1)
+list_1 = [randint(0, 10) for i in range(10)]
 print(list_1)
-print(q)
-print(len(q))
+print(set(list_1))
+print(len(set(list_1)))
