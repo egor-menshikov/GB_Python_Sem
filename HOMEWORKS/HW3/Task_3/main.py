@@ -11,9 +11,9 @@ letters = {'AEIOULNSTRАВЕИНОРСТ': 1,
 word = input('Введите любое слово:\n')
 points = 0
 
-for i in range(len(word)):
+for letter_idx in range(len(word)):
     for key, value in letters.items():
-        if word[i].casefold() in key.casefold():
+        if word[letter_idx].casefold() in key.casefold():
             points += value
 
 print(f'{word} => {points} очка')
