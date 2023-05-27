@@ -16,5 +16,5 @@ print(list_)
 num_x = int(input('Какое число от 0 до 9 будем считать? '))
 count = [int(num_x == item) for item in list_]
 
-print(count, '   <-- Вот таким способом решил посчитать, не знаю плохо это или хорошо')
+print(count)
 print(f'Число {num_x} встречается {sum(count)} раз')
