@@ -6,8 +6,64 @@
 # Output: a a_1 a_2 b c a_3 a_4 d c_1 d_1 d_2
 
 word = input("Введите текст: ")
-word_ = [i for i in word]
+word_ = list(word)
 print((word_))
+
+dict_ = {}
+for i in word:
+    if i in dict_:
+        print(f'{i}_{dict_[i]}', end='  ')
+        dict_[i] += 1
+    else:
+        print(i, end='  ')
+        dict_[i] = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# stroka = input().split()
+# result = {}
+# for i in stroka:
+#     if i in result:
+#         print(f'{i}_{result[i]}', end=' ')
+#     else:
+#         print(i, end=' ')
+#     result[i] = result.get(i, 0) + 1
+
+# word = input("Введите текст: ")
+# word_ = [i for i in word]
+# print((word_))
 
 # Решение препода
 # word = input("Введите текст: ").split()
@@ -29,3 +85,4 @@ print((word_))
 #     else: # ключа i нет внутри словаря result
 #         print(i, end=' ')
 #     result[i] = result.get(i, 0) + 1
+# print(result)
