@@ -9,11 +9,12 @@
 # (даже для ввода и вывода).
 
 
-def reverse_numbers(n):
-   if n == 0:
-      return ''
-   k = input()
-   return reverse_numbers(n - 1) + f' {k}'
+def reverse_nums(num):
+    if num == 0:
+        return ''
+    k = input()
+    return reverse_nums(num - 1) + f' {k}'
+
 
 n = int(input())
-print(reverse_numbers(n))
+print(reverse_nums(n))
