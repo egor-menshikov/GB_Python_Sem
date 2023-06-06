@@ -9,7 +9,7 @@
 
 list_ = [int(i) for i in input('Введите числа через пробел:\n').split()][:10]
 print(list_)
-dict_ = dict.fromkeys(list_, 0)
+dict_ = dict()
 
 for item in list_:
     dict_[item] = list_.count(item) // 2
