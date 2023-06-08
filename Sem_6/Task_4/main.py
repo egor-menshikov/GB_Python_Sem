@@ -32,10 +32,10 @@ for k, v in dict_.items():
             dict_2[k] = k1
 
 print(dict_2)
-
-sum_div_num = {}
-
-# for number in range(1, 10000):
+#
+# sum_div_num = {}
+#
+# for number in range(1, 1500):
 #     sum_ = 0
 #     for i in range(1, number // 2 + 1):
 #         if number % i == 0:
@@ -46,7 +46,6 @@ sum_div_num = {}
 # for num in sum_div_num:
 #     if num == sum_div_num.get(sum_div_num.get(num)) and num > sum_div_num.get(num):
 #         print(num, sum_div_num.get(num))
-
 
 # n = int(input())
 # list_1 = list()
