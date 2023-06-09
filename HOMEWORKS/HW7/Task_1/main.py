@@ -22,7 +22,7 @@ def vowel_count():
         result.append(count)
     if min(result) == max(result):
         return print('Парам пам-пам')
-    print('Пам парам')
+    return print('Пам парам')
 
 
 vowel_count()
