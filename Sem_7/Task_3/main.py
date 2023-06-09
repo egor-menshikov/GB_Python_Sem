@@ -12,11 +12,10 @@
 def same_by(char, obj):
     if len(set(list(map(char, obj)))) > 1:
         return False
-    else:
-        return True
+    return True
 
 
-values = [0, 2, 10, 6, 13]
+values = [0, 2, 10, 6]
 if same_by(lambda x: x % 2, values):
     print('same')
 else:

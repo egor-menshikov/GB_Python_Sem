@@ -23,21 +23,23 @@
 # Вывод:
 # 2.5 10
 
-def find_farthest_orbits(list_of_orbits):
-    area = [((a, b), (a * b)) for a, b in list_of_orbits if a != b]
-    max_ = area[0][1]
-    for i in range(len(area)):
-        if area[i][1] > max_:
-            max_ = area[i][1]
-    return [a for a, b in area if b == max_]
+
+from random import randint
 
 
-orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
-print(*find_farthest_orbits(orbits))
+# def find_farthest_orbits(list_of_orbits):
+#     area = [((a, b), (a * b)) for a, b in list_of_orbits if a != b]
+#     max_ = area[0][1]
+#     for i in range(len(area)):
+#         if area[i][1] > max_:
+#             max_ = area[i][1]
+#     return [a for a, b in area if b == max_]
 
-# def find_farthest_orbit(orbits):
-#     return max(orbits, key=lambda x: x[0] * x[1] if x[0] != x[1] else -1)
-#
-#
-# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
-# print(*find_farthest_orbit(orbits))
+
+def find_farthest_orbits(orbits):
+    return max(orbits, key=lambda x: x[0] * x[1] if x[0] != x[1] else -1)
+
+
+orbits = [(randint(1, 10), randint(1, 10)) for i in range(10)]
+print(orbits)
+print(find_farthest_orbits(orbits))

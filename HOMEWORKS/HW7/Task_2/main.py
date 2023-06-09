@@ -13,7 +13,8 @@ def print_operation_table(operation, num_rows=6, num_columns=6):
         for j in range(0, num_columns):
             row_.append(operation(i + 1, j + 1))
         list_.append(row_)
-    return print('\n'.join(map(str, list_)))
+    # return print('\n'.join(map(str, list_)))
+    return print(*list_, sep='\n')
 
 
 print_operation_table(lambda x, y: x * y)
