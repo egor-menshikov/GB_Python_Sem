@@ -10,3 +10,19 @@
 #     **Вывод:** Парам пам-пам
 
 
+def vowel_count():
+    vowels = 'аеёиоуыэюя'
+    text = input('Введите стихотворение: ').casefold().split()
+    result = []
+    for item in text:
+        count = 0
+        for vowel in item:
+            if vowel in vowels:
+                count += 1
+        result.append(count)
+    if min(result) == max(result):
+        return print('Парам пам-пам')
+    print('Пам парам')
+
+
+vowel_count()
