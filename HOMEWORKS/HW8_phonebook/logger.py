@@ -38,7 +38,6 @@ def edit_data():
           f' {phonebook[contact_choice]["surname"]:<14}'
           f' {phonebook[contact_choice]["phone"]:<16}'
           f' {phonebook[contact_choice]["address"]:<16}')
-
     print(f'{"1) Имя":<12}'
           f' {"2) Фамилия":<14}'
           f' {"3) Телефон":<16}'
@@ -66,7 +65,20 @@ def delete_data():
     with open(PATH, 'w', encoding='utf-8') as file:
         json.dump(phonebook, file, ensure_ascii=False)
 
+
+def search_data():
+    with open(PATH, 'r', encoding='utf-8') as file:
+        phonebook = json.load(file)
+    print(prompt := input('\nЧто вы хотите найти?\n-> ').casefold())
+    for k, v in phonebook.items():
+        for value in v.values():
+            if value.find(prompt) != -1:
+                print(f'{k:^2} {v["name"]:<12} {v["surname"]:<14} {v["phone"]:<16} {v["address"]:<16}')
+                break
+
+
 # delete_data()
 # input_data()
 # edit_data()
 # print_data()
+# search_data()

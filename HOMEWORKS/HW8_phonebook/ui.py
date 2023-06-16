@@ -1,4 +1,4 @@
-from logger import input_data, print_data, edit_data, delete_data
+from logger import input_data, print_data, edit_data, delete_data, search_data
 
 
 def print_menu():
@@ -7,16 +7,17 @@ def print_menu():
           '2. Удалить контакт\n'
           '3. Редактировать контакт\n'
           '4. Вывести данные\n'
-          '5. Выход')
+          '5. Поиск контакта\n'
+          '6. Выход')
 
 
 def interface():
     command = -1
-    while command != 5:
+    while command != 6:
         print_menu()
         command = int(input("Введите номер операции: "))
 
-        while command < 1 or command > 5:
+        while command < 1 or command > 6:
             print('Вы ошиблись при выборе.')
             command = int(input("Введите номер операции: "))
 
@@ -29,4 +30,6 @@ def interface():
         elif command == 4:
             print_data()
         elif command == 5:
+            search_data()
+        elif command == 6:
             print("Всего доброго!")
