@@ -4,7 +4,7 @@ from logger import input_data, print_data, edit_data, delete_data
 def interface():
     command = -1
     while command != 5:
-        print('Доброго времени суток! Вы попали на специальную программу от нашей группы! Что же мы можем делать?\n'
+        print('\nМеню:\n'
               '1. Добавить контакт\n'
               '2. Удалить контакт\n'
               '3. Редактировать контакт\n'

@@ -61,6 +61,19 @@ def edit_data():
         json.dump(phonebook, file, ensure_ascii=False)
 
 
+def delete_data():
+    with open(PATH, 'r', encoding='utf-8') as file:
+        phonebook = json.load(file)
+    for k, v in phonebook.items():
+        print(f'{k:^2} {v["name"]:<12} {v["surname"]:<14} {v["phone"]:<16} {v["address"]:<16}')
+    print(contact_choice := input('Введите номер записи, которую вы хотите удалить: '))
+    phonebook.pop(contact_choice)
+    contact_list = [v for k, v in phonebook.items()]
+    phonebook = {str(k): v for k, v in enumerate(contact_list, 1)}
+    with open(PATH, 'w', encoding='utf-8') as file:
+        json.dump(phonebook, file, ensure_ascii=False)
+
+# delete_data()
 # input_data()
 # edit_data()
-print_data()
+# print_data()
