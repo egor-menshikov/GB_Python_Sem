@@ -1,15 +1,19 @@
 from logger import input_data, print_data, edit_data, delete_data
 
 
+def print_menu():
+    print('\nМеню:\n'
+          '1. Добавить контакт\n'
+          '2. Удалить контакт\n'
+          '3. Редактировать контакт\n'
+          '4. Вывести данные\n'
+          '5. Выход')
+
+
 def interface():
     command = -1
     while command != 5:
-        print('\nМеню:\n'
-              '1. Добавить контакт\n'
-              '2. Удалить контакт\n'
-              '3. Редактировать контакт\n'
-              '4. Вывести данные\n'
-              '5. Выход')
+        print_menu()
         command = int(input("Введите номер операции: "))
 
         while command < 1 or command > 5:
