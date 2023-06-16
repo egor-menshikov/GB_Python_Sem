@@ -25,4 +25,4 @@ def interface():
         elif command == 4:
             print_data()
         elif command == 5:
-            print("Спасибо, что воспользовались нашими услугами. Всего доброго!")
+            print("Всего доброго!")
