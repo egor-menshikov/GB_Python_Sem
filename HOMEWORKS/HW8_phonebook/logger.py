@@ -41,20 +41,16 @@ def edit_data():
           f' {"2) Фамилия":<14}'
           f' {"3) Телефон":<16}'
           f' {"4) Адрес":<16}')
-    print(column_choice := int(input('\nВыберите соответсвующую категорию: ')))
+    print(column_choice := int(input('\nВыберите соответствующую категорию: ')))
     match column_choice:
         case 1:
-            print('Введите новое имя: ')
-            phonebook[contact_choice]["name"] = input()
+            phonebook[contact_choice]["name"] = name_data()
         case 2:
-            print('Введите новую фамилию: ')
-            phonebook[contact_choice]["surname"] = input()
+            phonebook[contact_choice]["surname"] = surname_data()
         case 3:
-            print('Введите новый телефон: ')
-            phonebook[contact_choice]["phone"] = input()
+            phonebook[contact_choice]["phone"] = phone_data()
         case 4:
-            print('Введите новый адрес: ')
-            phonebook[contact_choice]["address"] = input()
+            phonebook[contact_choice]["address"] = address_data()
     with open(PATH, 'w', encoding='utf-8') as file:
         json.dump(phonebook, file, ensure_ascii=False)
 
