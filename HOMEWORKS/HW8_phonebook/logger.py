@@ -33,12 +33,12 @@ def input_data():
 def edit_data():
     phonebook = print_data()
     print(contact_choice := input('Введите номер записи, которую вы хотите изменить: '))
-    # print(f'\nВы хотите изменить:\n\n'
-    #       f'{phonebook[contact_choice]["name"]:<12}'
-    #       f' {phonebook[contact_choice]["surname"]:<14}'
-    #       f' {phonebook[contact_choice]["phone"]:<16}'
-    #       f' {phonebook[contact_choice]["address"]:<16}')
-    pr
+    print(f'\nВы хотите изменить:\n\n'
+          f'{phonebook[contact_choice]["name"]:<12}'
+          f' {phonebook[contact_choice]["surname"]:<14}'
+          f' {phonebook[contact_choice]["phone"]:<16}'
+          f' {phonebook[contact_choice]["address"]:<16}')
+
     print(f'{"1) Имя":<12}'
           f' {"2) Фамилия":<14}'
           f' {"3) Телефон":<16}'
