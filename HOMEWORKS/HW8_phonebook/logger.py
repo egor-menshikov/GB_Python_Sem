@@ -43,6 +43,7 @@ def edit_data():
                   f' {phonebook[contact_choice]["address"]:<16}')
             break
         else:
+            print('Вы ошиблись при выборе.')
             print(contact_choice := input('Введите номер записи, которую вы хотите изменить: '))
     print(f'{"1) Имя":<12}'
           f' {"2) Фамилия":<14}'
@@ -65,6 +66,7 @@ def edit_data():
                 phonebook[contact_choice]["address"] = address_data()
                 break
             case _:
+                print('Вы ошиблись при выборе.')
                 print(column_choice := int(input('\nВыберите соответствующую категорию: ')))
 
     with open(PATH, 'w', encoding='utf-8') as file:
@@ -87,7 +89,7 @@ def search_data():
     print(prompt := input('\nЧто вы хотите найти?\n-> ').casefold())
     for k, v in phonebook.items():
         for value in v.values():
-            if value.find(prompt) != -1:
+            if prompt in value.casefold():
                 print(f'{k:^2} {v["name"]:<12} {v["surname"]:<14} {v["phone"]:<16} {v["address"]:<16}')
                 break
 
