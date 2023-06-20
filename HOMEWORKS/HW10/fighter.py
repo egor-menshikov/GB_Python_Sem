@@ -1,7 +1,7 @@
 from random import randint
 
 
-class Fighter():
+class Fighter:
     crit_dmg_mod = 1.5
     body_part = {'head': 1.25, 'body': 1, 'arms': 0.8, 'legs': 0.6}
 
