@@ -77,8 +77,3 @@ class Fighter:
 
 sub_zero = Fighter('Sub-Zero', 100, 33, 40, 18, 85, 15)
 scorpion = Fighter('Scorpion', 110, 33, 25, 21, 80, 15)
-
-# sub_zero.strike(scorpion)
-#
-# # print(sub_zero)
-# print(scorpion.hp)
