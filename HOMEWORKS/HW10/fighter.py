@@ -26,8 +26,9 @@ class Fighter:
                f'HP: {self.hp} | Dodge: {self.dodge} | Block: {self.block}\n' \
                f'ATT: {self.attack} | ACC: {self.accuracy} | Crit%: {self.crit}\n'
 
+    # Метод удара
     def strike(self, opponent):
-        # Считаем урон
+        # Рандомим в какую часть тела пойдет удар, и создаем модификатор дамага
         loc_roll = randint(0, 9)
         dmg_mod: float
         if loc_roll == 0:
@@ -39,13 +40,14 @@ class Fighter:
         else:
             dmg_mod = Fighter.body_part['body']
 
+        # Тут считаем урон, если критануло - ставим флаг для вывода другого текста в комбат логе
         damage = self.attack * dmg_mod
         did_crit = False
         if self.crit >= randint(1, 100):
             damage *= Fighter.crit_dmg_mod
             did_crit = True
 
-        # Наносим урон, если попали
+        # Наносим урон если попали, пишем комбат лог
         if self.accuracy >= randint(1, 100):
             if opponent.dodge < randint(1, 100):
                 if opponent.block < randint(1, 100):
