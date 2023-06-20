@@ -4,6 +4,7 @@ from random import randint
 class Fighter():
     crit_dmg_mod = 1.5
     body_part = {'head': 1.25, 'body': 1, 'arms': 0.8, 'legs': 0.6}
+
     def __init__(self,
                  name: str,
                  hp: int,
@@ -11,8 +12,7 @@ class Fighter():
                  block: int,
                  attack: int,
                  accuracy: int,
-                 crit: int,
-                 alive = True):
+                 crit: int):
         self.name = name
         self.hp = hp
         self.dodge = dodge
@@ -20,7 +20,6 @@ class Fighter():
         self.attack = attack
         self.accuracy = accuracy
         self.crit = crit
-        self.alive = alive
 
     def __str__(self):
         return f'{self.name}\n' \
@@ -66,18 +65,16 @@ class Fighter():
         else:
             print(f'{self.name} attacks {opponent.name}, but misses.\n')
 
-
-    def alive_check(self):
+    def isalive(self):
         if self.hp < 1:
-            self.alive = False
+            return False
+        return True
+
 
 sub_zero = Fighter('Sub-Zero', 100, 33, 40, 18, 85, 15)
 scorpion = Fighter('Scorpion', 110, 33, 25, 21, 80, 15)
 
-sub_zero.strike(scorpion)
-sub_zero.alive_check()
-scorpion.alive_check()
-print(sub_zero.alive)
-print(scorpion.alive)
-# print(sub_zero)
-print(scorpion.hp)
+# sub_zero.strike(scorpion)
+#
+# # print(sub_zero)
+# print(scorpion.hp)
