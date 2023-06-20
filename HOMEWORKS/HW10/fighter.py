@@ -55,17 +55,19 @@ class Fighter:
                     if did_crit:
                         print(f'{self.name} critically hits {opponent.name}'
                               f' in the {next(k for k, v in Fighter.body_part.items() if v == dmg_mod)}'
-                              f' for {int(damage)} damage!\n')
+                              f' for {int(damage)} damage!'
+                              f' ------> {self.name}: {self.hp} | {opponent.name}: {opponent.hp}')
                     else:
                         print(f'{self.name} hits {opponent.name}'
                               f' in the {next(k for k, v in Fighter.body_part.items() if v == dmg_mod)}'
-                              f' for {int(damage)} damage.\n')
+                              f' for {int(damage)} damage.'
+                              f' ------> {self.name}: {self.hp} | {opponent.name}: {opponent.hp}')
                 else:
-                    print(f'{self.name} attacks, but is blocked by {opponent.name}.\n')
+                    print(f'{self.name} attacks, but is blocked by {opponent.name}.')
             else:
-                print(f'{self.name} attacks, but {opponent.name} dodges.\n')
+                print(f'{self.name} attacks, but {opponent.name} dodges.')
         else:
-            print(f'{self.name} attacks {opponent.name}, but misses.\n')
+            print(f'{self.name} attacks {opponent.name}, but misses.')
 
     def isalive(self):
         if self.hp < 1:
